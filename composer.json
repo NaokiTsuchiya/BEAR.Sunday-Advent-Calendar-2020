@@ -19,17 +19,25 @@
     },
     "autoload": {
         "psr-4": {
-            "Bengo4\\Bearavel\\": "src/"
+            "Bengo4\\Bearavel\\": "src/",
+            "App\\": "laravel/app/",
+            "Database\\Factories\\": "laravel/database/factories/",
+            "Database\\Seeders\\": "laravel/database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bengo4\\Bearavel\\": "tests/"
+            "Bengo4\\Bearavel\\": "tests/",
+            "Tests\\": "laravel/tests/"
         }
     },
     "scripts": {
         "post-update-cmd": "@setup",
         "post-install-cmd": "@setup",
+        "post-autoload-dump": [
+            "@php bin/artisan clear-compiled",
+            "@php bin/artisan package:discover --ansi"
+        ],
         "setup": "php bin/setup.php",
         "compile": "bear.compile 'Bengo4\\Bearavel' prod-app ./",
         "test": "phpunit",
@@ -72,6 +80,12 @@
     },
     "config": {
         "sort-packages": true,
-        "process-timeout": 0
+        "process-timeout": 0,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
     }
 }
