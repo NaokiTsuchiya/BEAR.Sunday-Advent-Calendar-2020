@@ -35,8 +35,8 @@
         "post-update-cmd": "@setup",
         "post-install-cmd": "@setup",
         "post-autoload-dump": [
-            "@php laravel/artisan clear-compiled",
-            "@php laravel/artisan package:discover --ansi"
+            "@php bin/artisan clear-compiled",
+            "@php bin/artisan package:discover --ansi"
         ],
         "setup": "php bin/setup.php",
         "compile": "bear.compile 'Bengo4\\Bearavel' prod-app ./",
@@ -80,6 +80,12 @@
     },
     "config": {
         "sort-packages": true,
-        "process-timeout": 0
+        "process-timeout": 0,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
     }
 }
