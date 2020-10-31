@@ -19,12 +19,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Bengo4\\Bearavel\\": "src/"
+            "Bengo4\\Bearavel\\": "src/",
+            "App\\": "laravel/app/",
+            "Database\\Factories\\": "laravel/database/factories/",
+            "Database\\Seeders\\": "laravel/database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bengo4\\Bearavel\\": "tests/"
+            "Bengo4\\Bearavel\\": "tests/",
+            "Tests\\": "laravel/tests/"
         }
     },
     "scripts": {
