@@ -11,19 +11,10 @@ use Throwable;
 
 use function assert;
 
-/**
- * @psalm-import-type Globals from \BEAR\Sunday\Extension\Router\RouterInterface
- * @psalm-import-type Server from \BEAR\Sunday\Extension\Router\RouterInterface
- */
-final class Bootstrap
+final class Bootstrap implements BootstrapInterface
 {
     /**
-     * @psalm-param Globals $globals
-     * @psalm-param Server  $server
-     * @phpstan-param array<string, mixed> $globals
-     * @phpstan-param array<string, mixed> $server
-     *
-     * @return 0|1
+     * {@inheritdoc}
      */
     public function __invoke(string $context, array $globals, array $server): int
     {
